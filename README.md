@@ -1,8 +1,8 @@
 # TypeSpec OpenAPI Example
 
-This repo contains an example of how to use TypeSpec to generate an OpenAPI document, and how to use that document to generate an SDK.
+This repo contains an example of how to use TypeSpec to generate an OpenAPI document, and how to use that document to create an SDK.
 
-## Pre-requisites
+## Prerequisites
 
 You'll need the TypeSpec compiler and Speakeasy CLI installed to generate the OpenAPI document and SDK.
 
@@ -22,7 +22,7 @@ tsc --version
 
 ### Speakeasy CLI
 
-To generate an SDK, you will also need to [install the Speakeasy CLI](https://www.speakeasyapi.dev/docs/speakeasy-cli/getting-started).
+To create an SDK, you will need to [install the Speakeasy CLI](https://www.speakeasyapi.dev/docs/speakeasy-cli/getting-started).
 
 On macOS, you can install the Speakeasy CLI using the following command:
 
@@ -48,11 +48,11 @@ To generate the OpenAPI document, run the following command:
 tsp compile main.tsp --emit @typespec/openapi3
 ```
 
-This will generate an OpenAPI document at [tsp-output/@typespec/openapi3/openapi.1.0.0.yaml](tsp-output/@typespec/openapi3/openapi.1.0.0.yaml).
+This will generate an OpenAPI document at [`tsp-output/@typespec/openapi3/openapi.1.0.0.yaml`](tsp-output/@typespec/openapi3/openapi.1.0.0.yaml).
 
-### Generating the SDK
+### Creating the SDK
 
-To generate an SDK from the OpenAPI document, run the following command:
+To create an SDK from the OpenAPI document, run the following command:
 
 ```bash
 speakeasy generate sdk \              
@@ -61,15 +61,15 @@ speakeasy generate sdk \
     --out ./sdks/bookstore-ts
 ```
 
-This will generate a TypeScript SDK in the `sdks/bookstore-ts` directory.
+This will create a TypeScript SDK in the `sdks/bookstore-ts` directory.
 
 ### Using OpenAPI Overlays to Customize the SDK
 
-While TypeSpec is in active development, you may wish to add customizations to the generated SDK. You can do this using OpenAPI overlays.
+While TypeSpec is in active development, you may wish to add customizations to the created SDK. You can do this using OpenAPI overlays.
 
 The `bookstore-overlay.yaml` file contains an example overlay that adds complete examples to the `Book` and `Magazine` schemas.
 
-To apply the overlay and generate a customized SDK, run the following commands:
+To apply the overlay and create a customized SDK, run the following commands:
 
 ```bash
 # Validate the overlay
@@ -85,4 +85,4 @@ speakeasy generate sdk \
     --out ./sdks/bookstore-ts
 ```
 
-This will generate a TypeScript SDK in the `sdks/bookstore-ts` directory with the customizations from the overlay applied.
+This will create a TypeScript SDK in the `sdks/bookstore-ts` directory with the customizations from the overlay applied.
